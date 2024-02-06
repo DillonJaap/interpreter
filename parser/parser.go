@@ -228,6 +228,7 @@ func (p *Parser) noPrefixParseFnError(t token.TokenType) {
 	p.errors = append(p.errors, msg)
 }
 
+// let x = (5 + 1 * 3)
 func (p *Parser) parseExpression(precedence int) ast.Expression {
 	prefix := p.prefixParseFns[p.curToken.Type]
 	if prefix == nil {
